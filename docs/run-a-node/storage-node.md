@@ -110,6 +110,7 @@ start by installing all the essential tools and libraries required to build the 
     cd 0g-storage-node
 
     # Build in release mode
+    git submodule update --init
     cargo build --release
     ```
 
