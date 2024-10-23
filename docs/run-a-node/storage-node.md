@@ -50,7 +50,7 @@ start by installing all the essential tools and libraries required to build the 
 
         ```bash
         sudo apt-get update
-        sudo apt-get install clang cmake build-essential pkg-config libssl-dev
+        sudo apt-get install clang cmake build-essential pkg-config libssl-dev build-essential
         ```
 </TabItem>
   <TabItem value="mac">
@@ -98,10 +98,10 @@ start by installing all the essential tools and libraries required to build the 
 
         *   Go is a programming language used for certain components of the 0G node.
 
- **Download the Source Code**: clones the 0G storage node repository from GitHub, specifically the `v0.4.6` branch.
+ **Download the Source Code**: clones the 0G storage node repository from GitHub, specifically the `v0.6.1` branch.
 
     ```bash
-    git clone -b v0.4.6 https://github.com/0glabs/0g-storage-node.git
+    git clone -b v0.6.1 https://github.com/0glabs/0g-storage-node.git
     ```
 
 **Build the Source Code**
@@ -132,9 +132,6 @@ nano config.toml
 2. Update `config.toml` with your settings:
 
 ```toml
-# ENR address: Your instance's public IP
-network_enr_address = "YOUR_PUBLIC_IP"
-
 # Peer nodes: Check 0g-storage/run/config-testnet.toml for official configurations
 network_boot_nodes = []
 
@@ -150,18 +147,13 @@ log_sync_start_block_number = BLOCK_NUMBER
 
 # Your private key (64 chars, no '0x' prefix, include leading zeros)
 miner_key = "YOUR_PRIVATE_KEY"
-
-# Max chunk entries in db (affects storage size)
-db_max_num_chunks = MAX_CHUNKS
 ```
 :::note
-*   `network_enr_address`: Your node's public IP address, essential for other nodes to discover and connect to you.
         *   `network_boot_nodes`: A list of peer nodes to help your node join the network. You can find official configurations in the `0g-storage/run/config-t` file.
         *   `log_contract_address`, `mine_contract_address`: The addresses of the smart contracts on the host blockchain that manage the log and mining processes, respectively.
         *   `blockchain_rpc_endpoint`: The URL of an RPC endpoint to interact with the host blockchain.
         *   `log_sync_start_block_number`: The block number from which your node should start synchronizing the log data.
         *   `miner_key`: Your private key (without the `0x` prefix) if you want to participate in PoRA mining and earn rewards.
-        *   `db_max_num_chunks`: The maximum number of chunk entries (each 256 bytes) to store in the database. This effectively limits the database size.
         :::
 ## Running the Storage Node
 
