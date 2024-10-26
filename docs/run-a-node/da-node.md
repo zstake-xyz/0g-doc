@@ -39,7 +39,12 @@ Keep the generated BLS private key secure.
 
 **3. Set up config.toml:**
 
-1. Create a configuration file named `config.toml` in the project root directory.
+1. Change the example file name from `config_example.toml` to `config.toml` and change the settings.
+  ```toml
+  cp $HOME/0g-da-node/run/config_example.toml $HOME/0g-da-node/run/config.toml
+  nano $HOME/0g-da-node/config.toml
+  ```
+
 2. Add the following content to the file, adjusting values as needed:
 
    ```toml
@@ -57,7 +62,7 @@ Keep the generated BLS private key secure.
    # public grpc service socket address to register in DA contract
    # ip:34000 (keep same port as the grpc listen address)
    # or if you have dns, fill your dns
-   socket_address = "<public_ip/dns>:34000"
+   socket_address = "<your_server_ip>:34000"
 
    # data availability contract to interact with
    da_entrance_address = "0x857C0A28A8634614BB2C96039Cf4a20AFF709Aa9" # testnet config
