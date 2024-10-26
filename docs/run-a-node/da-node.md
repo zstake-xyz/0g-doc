@@ -39,8 +39,9 @@ Keep the generated BLS private key secure.
 
 **3. Set up config.toml:**
 
-1. Change the example file name from `config_example.toml` to `config.toml` and change the settings.
-  ```toml
+1. Change the example file name from `config_example.toml` to `config.toml` and change the settings:
+   
+  ```
   cp $HOME/0g-da-node/run/config_example.toml $HOME/0g-da-node/run/config.toml
   nano $HOME/0g-da-node/config.toml
   ```
@@ -158,7 +159,12 @@ cargo run --bin key-gen
 
 ## Step 3: Configure the Node
 
-1. Create a configuration file named `config.toml` in the project root directory.
+1. Change the example file name from `config_example.toml` to `config.toml` and change the settings:
+   
+  ```
+  cp $HOME/0g-da-node/run/config_example.toml $HOME/0g-da-node/run/config.toml
+  nano $HOME/0g-da-node/config.toml
+  ```
 2. Add the following content to the file, adjusting values as needed:
 
    ```toml
